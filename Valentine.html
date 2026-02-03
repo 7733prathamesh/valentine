@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Valentine 💌</title>
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(#ff9a9e, #fad0c4);
+  overflow: hidden;
+  font-family: Arial;
+  text-align: center;
+}
+
+h1 {
+  margin-top: 80px;
+  color: #fff;
+}
+
+button {
+  padding: 12px 25px;
+  font-size: 18px;
+  margin: 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#yes { background: #4CAF50; color: white; }
+#no  { background: #f44336; color: white; position: absolute; }
+
+/* HEART STYLE */
+.heart {
+  position: absolute;
+  color: red;
+  font-size: 20px;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  0% { top: -10%; opacity: 1; }
+  100% { top: 110%; opacity: 0; }
+}
+</style>
+</head>
+
+<body>
+<h1>Hey Mitzi ❤️</h1>
+<h1>Will you be my Valentine ? ❤️</h1>
+
+<button id="yes" onclick="yes()">YES 😍</button>
+<button id="no">NO 😜</button>
+
+<script>
+/* NO button bhage */
+document.getElementById("no").onmouseover = function () {
+  this.style.left = Math.random()*300 + "px";
+  this.style.top  = Math.random()*300 + "px";
+}
+
+/* YES click */
+function yes() {
+ alert(
+  "Yayyy 💕 you just made my day!\n" +
+  "This smile on my face is because of you 😊\n" +
+  "From today, every Valentine is ours ❤️\n" +
+  "I promise to make you smile every single day ❤️\n" +
+  " &   It's Too late to escape now Bebe😈💖"
+);
+
+}
+
+/* HEART FLYING LOGIC */
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.classList.add("heart");
+  heart.innerHTML = "❤️";
+  heart.style.left = Math.random() * window.innerWidth + "px";
+  heart.style.fontSize = (Math.random() * 20 + 15) + "px";
+  heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
+
+  document.body.appendChild(heart);
+
+  setTimeout(() => {
+    heart.remove();
+  }, 6000);
+}
+
+setInterval(createHeart, 300);
+</script>
+
+</body>
+</html>
+
+
+
+
+
